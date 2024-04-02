@@ -4,5 +4,31 @@
     justify-content: space-between;
     overflow: scroll;
 
-    grid-area: nav;     /* Navigation item */
+    grid-area: nav;
+
+    background-color: var(--main-bg-color);
+
+
+}
+
+@keyframes drop-down {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@media (max-width: 36em) {
+    .nav {
+        position: absolute;
+        width: 8em;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        animation: drop-down 0.5s ease-out;
+    }
 }

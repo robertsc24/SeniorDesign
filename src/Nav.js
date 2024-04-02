@@ -1,4 +1,5 @@
 import "./nav.css";
+import closeIcon from "./images/navIcons/closeIcon.png"
 import profileIcon from "./images/navIcons/profileIcon.png"
 import homeIcon from "./images/navIcons/homeIcon.png"
 import calendarIcon from "./images/navIcons/calendarIcon.png"
@@ -7,37 +8,38 @@ import messagesIcon from "./images/navIcons/messagesIcon.png"
 import recordingsIcon from "./images/navIcons/recordingsIcon.png"
 import NavButton from "./NavButton";
 
-export default function Nav() {
+export default function Nav(props) {
     return (
         <div className="nav">
+            {props.showCloseButton ?
+                <NavButton
+                    onClick={props.clickCloseButton}
+                    icon={closeIcon}
+                    text="Close"
+                /> : null
+            }
             <NavButton
-                href="http://localhost:3000"
                 icon={profileIcon}
                 text="Profile"
             />
             <NavButton
-                href="http://localhost:3000"
                 icon={homeIcon}
                 text="Home"
                 selected={true}
             />
             <NavButton
-                href="http://localhost:3000"
                 icon={calendarIcon}
                 text="Calendar"
             />
             <NavButton
-                href="http://localhost:3000"
                 icon={coursesIcon}
                 text="Courses"
             />
             <NavButton
-                href="http://localhost:3000"
                 icon={messagesIcon}
                 text="Messages"
             />
             <NavButton
-                href="http://localhost:3000"
                 icon={recordingsIcon}
                 text="Recordings"
             />
