@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 4em;
+    background-color: var(--main-accent);
+    color: var(--main-bg-color);
+
+    grid-area: header;  /* Header item */
+}
+
+.header img {
+    margin: 1em;
+    height: 90%;
+
+    filter: invert() brightness(999);
+}
