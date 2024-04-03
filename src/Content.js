@@ -1,18 +1,16 @@
 import "./content.css";
-import NewsItem from "./NewsItem";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from "./HomePage";
 
 export default function Content() {
-
-    let newsItems = [];
-    for (let i = 0; i < 10; i++) {
-        newsItems[i] = <NewsItem reverseContents={i % 2 === 1}/>
-    }
-
     return (
         <div className="content">
-            <div className="news-container">
-                {newsItems}
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<HomePage/>}/>
+                    <Route path="test" element={<div>test</div>}/>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 /* The styling for the parent page element */
 .grid-layout {
     margin: 0;              /* Remove the margin to eliminate scroll bars */
+    width: 100vw;
     height: 100vh;
 
     display: grid;          /* Grid allows for setting the template for the page */

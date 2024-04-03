@@ -8,6 +8,39 @@ import messagesIcon from "./images/navIcons/messagesIcon.png"
 import recordingsIcon from "./images/navIcons/recordingsIcon.png"
 import NavButton from "./NavButton";
 
+export const navLinks= [
+    {
+        label: "Profile",
+        to: "/profile",
+        icon: profileIcon
+    },
+    {
+        label: "Home",
+        to: "/",
+        icon: homeIcon
+    },
+    {
+        label: "Calendar",
+        to: "/calendar",
+        icon: calendarIcon
+    },
+    {
+        label: "Courses",
+        to: "/courses",
+        icon: coursesIcon
+    },
+    {
+        label: "Messages",
+        to: "/messages",
+        icon: messagesIcon
+    },
+    {
+        label: "Recordings",
+        to: "/recordings",
+        icon: recordingsIcon
+    },
+];
+
 export default function Nav(props) {
     return (
         <div className="nav">
@@ -18,31 +51,16 @@ export default function Nav(props) {
                     text="Close"
                 /> : null
             }
-            <NavButton
-                icon={profileIcon}
-                text="Profile"
-            />
-            <NavButton
-                icon={homeIcon}
-                text="Home"
-                selected={true}
-            />
-            <NavButton
-                icon={calendarIcon}
-                text="Calendar"
-            />
-            <NavButton
-                icon={coursesIcon}
-                text="Courses"
-            />
-            <NavButton
-                icon={messagesIcon}
-                text="Messages"
-            />
-            <NavButton
-                icon={recordingsIcon}
-                text="Recordings"
-            />
+            {
+                navLinks.map((buttonObj, i) =>
+                    <NavButton
+                        href={buttonObj.to}
+                        icon={buttonObj.icon}
+                        text={buttonObj.label}
+                        selected={"/" + window.location.pathname.split("/")[1] === buttonObj.to}
+                    />
+                )
+            }
         </div>
     );
 }

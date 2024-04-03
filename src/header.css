@@ -2,14 +2,26 @@
     display: flex;
     align-items: center;
     height: 4em;
+    max-height: 72pt;
+    max-font-size: 48pt;
     background-color: var(--main-accent);
     color: var(--main-bg-color);
 
     grid-area: header;  /* Header item */
 }
 
+.header button {
+    cursor: pointer;
+
+    margin-right: -1em;
+    height: 90%;
+    background-color: transparent;
+    border: none;
+}
+
 .header img {
-    margin: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
     height: 90%;
 
     filter: invert() brightness(999);
