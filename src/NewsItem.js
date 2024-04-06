@@ -9,7 +9,15 @@ export default function NewsItem(props) {
     return (
         <a className={"news-item" + (props.reverseContents ? " flip" : "")} href={"/"}>
             <h1 className="news-item-headline">Lorem Ipsum</h1>
-            <p className="news-item-date">Posted {new Date().toLocaleString()}</p>
+            <p className="news-item-date">Posted {
+                new Date().toLocaleString([], {
+                    year: "numeric",
+                    month: "numeric",
+                    day: "numeric",
+                    hour: "numeric",
+                    minute: "2-digit"
+                })
+            }</p>
             <div className="news-item-preview">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin arcu
                 velit, dictum ac vulputate id, posuere vitae lacus. In egestas ullamcorper nisl, sed posuere justo

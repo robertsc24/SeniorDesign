@@ -4,7 +4,6 @@ import Nav from "./Nav";
 import Content from "./Content";
 import Footer from "./Footer";
 import {useEffect, useState} from "react";
-import {click} from "@testing-library/user-event/dist/click";
 
 export function useQueryState(query, onChange = null) {
     const [queryMatch, setQueryMatch] = useState(matchMedia(query).matches);
@@ -22,7 +21,7 @@ export function useQueryState(query, onChange = null) {
         return () => {
             widthCheck.removeEventListener("change", change);
         }
-    }, [query, queryMatch]);
+    }, [query, queryMatch, onChange]);
 
     return queryMatch;
 }
