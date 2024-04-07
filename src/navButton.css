@@ -1,0 +1,36 @@
+.nav-button a {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+
+    padding-bottom: 0.75em;
+
+    /* Get rid of default link styling */
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: var(--light-accent);
+    transition-duration: 0.25s;
+}
+
+.nav-button a img {
+    min-width: 60px;
+    width: 3em;
+    object-fit: cover;
+}
+
+.nav-button.selected {
+    background-color: var(--main-accent);
+}
+
+.nav-button.selected a {
+    filter: invert();
+}

@@ -1,0 +1,9 @@
+.footer {
+    display: flex;
+    align-items: center;
+    height: 2em;
+    max-height: 36pt;
+    padding-left: 1em;
+
+    grid-area: footer;
+}

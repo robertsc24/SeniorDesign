@@ -1,38 +1,50 @@
 /* The styling for the parent page element */
 .grid-layout {
     margin: 0;              /* Remove the margin to eliminate scroll bars */
+    width: 100vw;
     height: 100vh;
 
     display: grid;          /* Grid allows for setting the template for the page */
-    grid-template-columns: minmax(12em, 25em) auto; /* Grid columns: the left column should never
-                                         be smaller than 12em
-                                         The rest can grow as large as
-                                         it needs to be */
+    grid-template-columns: auto;
     grid-template-rows: auto 1fr auto; /* Grid rows: the top and bottom should grow
-                                         or shrink but be auto sized to only be
-                                         as tall as needed.  The middle row should
-                                         be set to the rest of the available space */
+                                     or shrink but be auto sized to only be
+                                     as tall as needed.  The middle row should
+                                     be set to the rest of the available space */
     grid-gap: 0;            /* No gap between items */
 
     /* Grid template areas define the row and column span for items */
     grid-template-areas:
+    "header"
+    "content"
+    "footer";
+}
+
+@media (min-width: 36em) {
+    .grid-layout {
+        grid-template-columns: 12em auto;
+
+        /* Grid template areas define the row and column span for items */
+        grid-template-areas:
         "header header"
         "nav content"
         "footer footer";
+    }
 }
 
-.header {
-    grid-area: header;  /* Header item */
+:root {
+    --main-bg-color: white;
+    --main-color: black;
+
+    --main-accent: royalblue;
+    --light-accent: #CDD7F7;
 }
 
-.footer {
-    grid-area: footer;  /* Footer item */
-}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 
-.content {
-    grid-area: content; /* Main content item */
-}
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
 
-.nav {
-    grid-area: nav;     /* Navigation item */
+    position: fixed;
 }
