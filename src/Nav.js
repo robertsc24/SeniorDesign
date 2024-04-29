@@ -3,7 +3,7 @@ import closeIcon from "./images/navIcons/closeIcon.png"
 import profileIcon from "./images/navIcons/profileIcon.png"
 import homeIcon from "./images/navIcons/homeIcon.png"
 import calendarIcon from "./images/navIcons/calendarIcon.png"
-import coursesIcon from "./images/navIcons/coursesIcon.png"
+import resourcesIcon from "./images/navIcons/resourcesIcon.png"
 import messagesIcon from "./images/navIcons/messagesIcon.png"
 import recordingsIcon from "./images/navIcons/recordingsIcon.png"
 import NavButton from "./NavButton";
@@ -25,9 +25,9 @@ export const navLinks= [
         icon: calendarIcon
     },
     {
-        label: "Courses",
-        to: "/courses",
-        icon: coursesIcon
+        label: "Resources",
+        to: "/resources",
+        icon: resourcesIcon
     },
     {
         label: "Messages",

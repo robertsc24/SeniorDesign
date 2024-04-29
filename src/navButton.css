@@ -1,3 +1,9 @@
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .nav-button a {
     cursor: pointer;
 
@@ -9,7 +15,7 @@
     width: 100%;
     height: 100%;
 
-    padding-bottom: 0.75em;
+    padding: 0.75em 0;
 
     /* Get rid of default link styling */
     color: var(--main-color);
@@ -28,9 +34,21 @@
 }
 
 .nav-button.selected {
-    background-color: var(--main-accent);
+    background-color: var(--main-bg-color);
 }
 
-.nav-button.selected a {
+.nav-button:not(.selected) a {
     filter: invert();
+}
+
+@media (min-width: 36em) {
+    .nav-button a {
+        width: 5em;
+        padding: 0 0.75em;
+    }
+
+    .nav-button a img {
+        min-width: 40px;
+        width: 2em;
+    }
 }

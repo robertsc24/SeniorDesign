@@ -1,8 +1,16 @@
 .news-item {
-    padding: 1em;
+    color: var(--main-color);
+    text-decoration: none;
+
+    transition-duration: 0.5s;
+    margin: 10px 0;
+}
+
+.news-item-content {
+    padding: 16px;
+    margin-top: 10px;
     height: 15em;
     overflow: hidden;
-    background-color: white;
     display: grid;
 
     grid-template-rows: auto auto 1fr;
@@ -14,22 +22,38 @@
     "date date"
     "preview preview";
 
-    color: var(--main-color);
-    text-decoration: none;
+    background-color: white;
 
     transition-duration: 0.5s;
 }
 
 .news-item:hover {
     transform: translateY(-4px);
+}
+
+.news-item:hover .news-item-content {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 20%);
 }
 
 @media (hover: none) {
     .news-item {
         transform: translateY(-4px);
+    }
+
+    .news-item-content {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 20%);
     }
+}
+
+.news-item-studio {
+    grid-area: studio;
+    padding: 10px;
+    color: white;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+
+    font-size: 125%;
+    font-weight: bold;
 }
 
 .news-item-headline {
@@ -65,7 +89,7 @@
 }
 
 @media (min-width: 22em) {
-    .news-item {
+    .news-item-content {
         grid-template-areas:
         "headline headline"
         "date preview"
@@ -76,7 +100,7 @@
 }
 
 @media (min-width: 60em) {
-    .news-item {
+    .news-item-content {
         grid-template-areas:
         "headline thumb"
         "date thumb"
@@ -85,7 +109,7 @@
         grid-template-columns: 1fr auto;
     }
 
-    .news-item.flip {
+    .news-item-content.flip {
         grid-template-areas:
         "thumb headline"
         "thumb date"

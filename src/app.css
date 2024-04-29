@@ -26,7 +26,7 @@
         /* Grid template areas define the row and column span for items */
         grid-template-areas:
         "header header"
-        "nav content"
+        "content content"
         "footer footer";
     }
 }

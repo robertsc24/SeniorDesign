@@ -28,21 +28,9 @@ export function useQueryState(query, onChange = null) {
 
 export default function App() {
 
-    const [showNavOverride, setShowNavOverride] = useState(false);
-
-    const showNav = useQueryState(
-        "(min-width: 36em)",
-        (newVal) => {
-            if (newVal) {
-                setShowNavOverride(false);
-            }
-        }
-    );
-
     return (
         <div className="grid-layout">
-            <Header navDropdown={!showNav} onClickDropdown={() => setShowNavOverride(true)}/>
-            {showNav || showNavOverride ? <Nav showCloseButton={showNavOverride} clickCloseButton={() => setShowNavOverride(false)}/> : null}
+            <Header/>
             <Content/>
             <Footer/>
         </div>

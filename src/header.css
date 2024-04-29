@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+
     display: flex;
     align-items: center;
     height: 4em;
@@ -20,7 +22,7 @@
     border: none;
 }
 
-.header img {
+.header > img, .header > button > img {
     margin-left: 1em;
     margin-right: 1em;
     height: 90%;
